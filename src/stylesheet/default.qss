@@ -1,0 +1,39 @@
+QGroupBox{
+        border: 2px solid black;
+        padding: 0px;
+        border-radius: 5px;
+        margin-top: 1ex; /* leave space at the top for the title */
+}
+
+QGroupBox::title {
+     subcontrol-origin: margin;
+     subcontrol-position: top center; /* position at the top center */
+     padding: 0 0px;
+ }
+
+
+
+ DisplayModelQt{
+        background-color : white;
+ }
+
+ GlobalParams{
+        max-height : 40;
+ }
+ArrayButtons{
+        max-height : 20;
+        padding: 0px;
+        border: 0px;
+        margin: 0px;
+
+}
+
+ArrayLabel{
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+
+
+}
+
+
