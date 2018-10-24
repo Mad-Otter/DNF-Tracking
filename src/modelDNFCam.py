@@ -42,9 +42,9 @@ class ModelDNFCam(Model,Renderable):
         if mapName == "PlayCam":
             bgr = self.playcam.getData()
             
-            sizeROI = self.size/10.
+            sizeROI = 1 #self.size/10.
             s2 = int(round(sizeROI/2.))
-            roi = bgr[y-s2:y+s2,x-s2:x+s2,:]
+            roi = bgr[y-s2:y+s2,x-s2:x+s2,:] # In BGR order
             hsv = cv2.cvtColor(roi,cv2.COLOR_BGR2HSV)
             colorVal = np.median(hsv[:,:,0])
             satHigh = np.max(hsv[:,:,1])
@@ -53,4 +53,5 @@ class ModelDNFCam(Model,Renderable):
             valLow = np.min(hsv[:,:,2])
 
             self.color_select.setArg(colorVal=colorVal,satLow=satLow,satHigh=satHigh)
+            print("ColorVal = ",colorVal, "SatHigh", satHigh, "SatLow", satLow, "ValHigh", valHigh, "ValLow", valLow)
             return "ColorSelect"
